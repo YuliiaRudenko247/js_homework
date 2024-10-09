@@ -1,13 +1,11 @@
-let result = false && true || true; 
-console.log(result);
+let result = false && (false || true); 
+console.log(result); // Ожидаемый результат: false
 
 
-// Сначала выполняется часть false && true. Потому что  && 
-// имеет более высокий приоритет, чем оператор ||.
-// false является ложным (falsy).
-// Если один ложен, результат  false && true будет false.
-// Теперь у нас есть false || true.
-// true является истинным (truthy).
-// Поэтому false || true будет true.
-// Ожидаемый результат: true
+// Сначала выполняется часть (false || true), поскольку 
+// оператор || имеет более высокий приоритет, чем оператор &&.
+// false является ложным (falsy), а true — истинным (truthy) поэтому (false || true) будет true.
+// Теперь false && true.
+// Поскольку первый ложен, результатом выражения false && true будет false.
+// Ожидаемый результат: false
 
