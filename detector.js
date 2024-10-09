@@ -1,11 +1,9 @@
-let result = false && (false || true); 
-console.log(result); // Ожидаемый результат: false
+let result = (+null == false) < 1 ** 5; 
+console.log(result); 
 
-
-// Сначала выполняется часть (false || true), поскольку 
-// оператор || имеет более высокий приоритет, чем оператор &&.
-// false является ложным (falsy), а true — истинным (truthy) поэтому (false || true) будет true.
-// Теперь false && true.
-// Поскольку первый ложен, результатом выражения false && true будет false.
+// +null преобразует null в число, результат будет 0.
+// 0 == false равно true.
+// 1 ** 5, что равно 1.
+// true < 1.
+// 1 < 1, что возвращает false.
 // Ожидаемый результат: false
-
