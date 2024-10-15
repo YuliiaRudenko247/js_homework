@@ -1,0 +1,29 @@
+commit e1df8453b82e3ecf1087ad1a62ec84ed6208c97a
+Author: yuliiarudenko <yrudenkowork@gmail.com>
+Date:   Tue Oct 8 17:59:22 2024 -0700
+
+    Добавлен пример с (+null == false) < 1 ** 5
+
+diff --git a/detector.js b/detector.js
+index e586a0c..d10d6d5 100644
+--- a/detector.js
++++ b/detector.js
+@@ -1,11 +1,9 @@
+-let result = false && (false || true); 
+-console.log(result); // Ожидаемый результат: false
++let result = (+null == false) < 1 ** 5; 
++console.log(result); 
+ 
+-
+-// Сначала выполняется часть (false || true), поскольку 
+-// оператор || имеет более высокий приоритет, чем оператор &&.
+-// false является ложным (falsy), а true — истинным (truthy) поэтому (false || true) будет true.
+-// Теперь false && true.
+-// Поскольку первый ложен, результатом выражения false && true будет false.
++// +null преобразует null в число, результат будет 0.
++// 0 == false равно true.
++// 1 ** 5, что равно 1.
++// true < 1.
++// 1 < 1, что возвращает false.
+ // Ожидаемый результат: false
+-
